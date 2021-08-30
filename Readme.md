@@ -2,7 +2,7 @@
 
 ## Graphical Representation 
 
-``` sequence
+```sequence
 
 iOS Client->Flask Server: Request for Client Secret
 Note right of Flask Server: Talks to Stripe API
