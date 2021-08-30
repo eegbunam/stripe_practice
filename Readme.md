@@ -2,7 +2,8 @@
 
 ## Graphical Representation 
 
-```sequence
+``` sequence
+
 iOS Client->Flask Server: Request for Client Secret
 Note right of Flask Server: Talks to Stripe API
 Flask Server-->iOS Client: You can have the Client Secret Since I have all the right information
