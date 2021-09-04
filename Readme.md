@@ -229,8 +229,8 @@ if __name__ == '__main__': #checks if the file name is being called
 
     4000 0000 0000 9995
     ```
-- Final Client Side Outcome should look like this: 
-     ![](https://i.imgur.com/0VDkBOF.png =200x300)
+7. Final Client Side Outcome should look like this:
+    - ![](https://i.imgur.com/0VDkBOF.png =200x300)
 
 
 ## Author
