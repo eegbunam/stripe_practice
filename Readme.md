@@ -197,6 +197,7 @@ if __name__ == '__main__': #checks if the file name is being called
 
 ## Client
 
+:wave: If you have xcode installed and don't want to go through the process of building your own application you can just run the .xcworkspace in the `test_stripe_iOS` folder
 
 :x: **If you have never built an iOS application before be sure to follow this tutorial [here](https://www.youtube.com/watch?v=bZNAFkkUeKs) to get started.**
 
