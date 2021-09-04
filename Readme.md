@@ -1,23 +1,37 @@
-# Creating Slack Server with an iOS Client
+##### `source` [hackmd.io](https://hackmd.io/KvUOvAAtSCy79-6_4yMwww?both)
+##### tags:  `tech` `React` `Python` `Flask` `Grafana` `ios` `Mobile Development` `Swift`
+
+# Stripe with an iOS Application
+
+
+## Introduction
+- About a year ago I built a food delivery app that needed to integrate payment. I quickly learned about stripe and tried to integrate this service into my iOS application. The process of integrating stripe into my application was an unpleasant one because I had very little development experience at the time and there was no tutorial out there that properly helped me integrate stripe. As a teacher now and an avid learner I hope for this repository to serve as a resource for students/developers looking to integrate stripe into their applications
+
+
+### Table of Contents
+
+- [Web Server](#Server)
+    - [Setup on replit](#Setup-on-replit)
+    - [Setup Locally](#Running-Locally)
+- [iOS Client](#Client)
+- [Authors](#Author)
 
 ## Graphical Representation 
 
-```sequence
+![](https://i.imgur.com/IGIdwwK.png)
 
-iOS Client->Flask Server: Request for Client Secret
-Note right of Flask Server: Talks to Stripe API
-Flask Server-->iOS Client: You can have the Client Secret Since I have all the right information
-Note left of iOS Client: Talks to Stripes API using Stipe's iOS SDK
 
-```
-#### Summary
+#### Application Summary
+
 
 - Before your iOS Client Application can submit a payment to stripe it must create a payment-intent with a client secret ==that can only be generated using server side code==. Once the client seceret is generated, your server sends it back to your client iOS Application. Your iOS Client uses that client secret  to create a payment-intent. Using that payment intent the iOS Application can now proceed to making a payment.
 
 
-# Server Side
+## Server
 
-## Running on Repl.it
+### Setup on replit
+
+
 
 **1. Install dependencies**
 
@@ -26,10 +40,12 @@ Note left of iOS Client: Talks to Stripes API using Stipe's iOS SDK
 2. Run the following commands to install the necessary packages for running a Flask server
     
     ::: warning
+    
       - `pip freeze > requirements.txt`
       - `pip install Flask`
       - `pip install requests`
       - `pip install stripe`
+
     :::
 
 
@@ -89,7 +105,7 @@ if __name__ == '__main__': #checks if the file name is being called
     - `python app.py`
 
 
-## Running Locally 
+### Running Locally 
 ::: warning
  Be sure you have gone through the [Slides](https://docs.google.com/presentation/d/1mrHnMqVBasNG5_VF576c9o81Qxx25vR17HArpSuRLCw/edit?usp=sharing) first before following this instructions
 :::
@@ -181,17 +197,27 @@ if __name__ == '__main__': #checks if the file name is being called
         
             :::
 
-## Client Side 
+## Client
+
+:::warning
+
+If you have never built an iOS application before be sure to follow this tutorial [here](https://www.youtube.com/watch?v=bZNAFkkUeKs) to get started.
+
+:::
+
 1. Head back to [iOS SDK Integrations](https://stripe.com/docs/payments/integration-builder)
 2. Create a simple iOS Application
 3. Copy and paste the code in **CheckoutViewController.swift** into your ViewController.swift(Replace Everything in your ViewController.swift)
     - Change the:
     - ```swift=
-            class CheckoutViewController: UIViewController {}
-            // to 
-            class ViewController: UIViewController {}
+      class CheckoutViewController: UIViewController {}
         ```
-    - Change the backend url to [localhost 5000](http://127.0.0.1:5000)
+        - to 
+    - ```swift=
+      class ViewController: UIViewController {}
+        ```
+    - Change the `backendUrl` to ```http://127.0.0.1:5000```
+        - The backendUrl is a variable in your ViewController.swift
 4. Run Your iOS Application
 5. Make a test payment
 6. Use a test card number to try your integration. These card numbers work in test mode with any CVC, postal code, and future expiry date. Stripe also has a set of international test cards to test specific postal code formats (e.g. only allow numerical values for U.S. zip codes).
@@ -211,10 +237,8 @@ if __name__ == '__main__': #checks if the file name is being called
      ![](https://i.imgur.com/0VDkBOF.png =200x300)
 
 
-## Common Errors
-- Slack Server not runing
-- Third party liabries not installed 
-- Did not start virtual env 
-- Feel free to share more
+## Author
+- [Ebuka Egbunam](https://www.linkedin.com/in/ebukaegb/)
+
         
         
